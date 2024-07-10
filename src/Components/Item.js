@@ -14,6 +14,7 @@ const Item = () => {
   const price = [6500, 2500, 53000, 500];
   let [naam, setNaam] = useState();
   let [phone, setPhone] = useState();
+  let [image, setImage] = useState(null);
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -41,7 +42,7 @@ const Item = () => {
     dim += size[pos][i];
   }
   const submitHandler = async (e) => {
-    const data = {name:naam, phone, item:id[pos]};
+    const data = {name:naam, phone, item:id[pos], image};
     setLoad(true);
     await axios.post(`${Backend}/order`, data)
     .then(response => {
@@ -66,6 +67,8 @@ const Item = () => {
       case "number":
         setPhone(e.target.value);
         break;
+      case "image":
+        setImage(e.target.files[0]);
       default:
         break;
     }
@@ -100,7 +103,18 @@ const Item = () => {
           <p>Phone number: </p>
           <input type="number" name="number" id="number" onChange={changeHandler} value={phone}/>
           </div>
-          <button type="submit" disabled={load || phone>=10000000000 || phone<1000000000 || phone==null || naam==null} onClick={submitHandler}>Book</button>
+          <div className='file'>
+            <p>Payment screenshot: </p>
+            <input type="file" name="image" id="image" accept="image/*" onChange={changeHandler} />
+          </div>
+          <div className='file'>
+            <p>Payment QR Code: </p>
+            <div>
+              <a href="/pay"><img src="/images/qr.jpg" alt="7307833947" /></a>
+              <p>(After making payment through UPI, your payment screenshot will be first verified and then only your order will be placed.)</p>            
+            </div>
+          </div>
+          <button type="submit" disabled={load || phone>=10000000000 || phone<1000000000 || phone==null || naam==null || image==null} onClick={submitHandler}>Book</button>
           {load && <img src="/gifs/loading.gif" alt="Loading..." className='loader'/>}
         </form>
       </div>

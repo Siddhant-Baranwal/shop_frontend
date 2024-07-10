@@ -7,6 +7,7 @@ import Failure from "./Components/Failure";
 import Navbar from "./Components/Navbar";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
+import Pay from "./Components/Pay";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/failure" element={<Failure/>}></Route>
           <Route exact path="/about" element={<About/>}></Route>
           <Route exact path="/contact" element={<Contact/>}></Route>
+          <Route exact path="/pay" element={<Pay/>}></Route>
         </Routes>
       </Router>
     </div>
