@@ -6,6 +6,7 @@ import Success from "./Components/Success";
 import Failure from "./Components/Failure";
 import Navbar from "./Components/Navbar";
 import About from "./Components/About";
+import Contact from "./Components/Contact";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/success" element={<Success/>}></Route>
           <Route exact path="/failure" element={<Failure/>}></Route>
           <Route exact path="/about" element={<About/>}></Route>
+          <Route exact path="/contact" element={<Contact/>}></Route>
         </Routes>
       </Router>
     </div>

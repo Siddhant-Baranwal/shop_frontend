@@ -255,7 +255,7 @@ form button:enabled:hover{
 .about{
   background-color: #1f283398;
   max-width: 1200px;
-  margin: 3vw auto 0 auto;
+  margin: 3vw auto 3vw auto;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 2vw 3vw;
 }
@@ -270,6 +270,7 @@ form button:enabled:hover{
 }
 
 .about h2{
+  margin-top: 1vw;
   padding: 2px;
   font-size: 1.75vw;
 }
@@ -279,4 +280,12 @@ form button:enabled:hover{
   padding: 2px 2px 2px 2vw;
   letter-spacing: 0.2vw;
   font-size: 1.5vw;
+}
+
+.wht{
+  color: white;
+}
+
+.spe{
+  text-decoration: underline;
 }
