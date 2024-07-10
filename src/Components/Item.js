@@ -7,7 +7,7 @@ const Item = () => {
   const navigate = useNavigate();
   let [load, setLoad] = useState(false);
   let [it, setIt] = useState(0);
-  const Backend = "http://localhost:4000"
+  const Backend = "https://shop-backend-j284.onrender.com"
   const {idInt} = useParams();
   const id = ["Cycle", "Matress", "Laptop", "Bucket"];
   const pos = id.findIndex(ele => ele.toLowerCase()===idInt);
