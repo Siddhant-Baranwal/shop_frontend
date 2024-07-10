@@ -8,13 +8,14 @@ const Item = () => {
   let [load, setLoad] = useState(false);
   let [it, setIt] = useState(0);
   const Backend = "https://shop-backend-j284.onrender.com"
+  // const Backend = "http://localhost:4000"
   const {idInt} = useParams();
   const id = ["Cycle", "Matress", "Laptop", "Bucket"];
   const pos = id.findIndex(ele => ele.toLowerCase()===idInt);
   const price = [6500, 2500, 53000, 500];
   let [naam, setNaam] = useState();
   let [phone, setPhone] = useState();
-  let [image, setImage] = useState(null);
+  let [transaction_id, setTransaction_id] = useState();
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -42,8 +43,9 @@ const Item = () => {
     dim += size[pos][i];
   }
   const submitHandler = async (e) => {
-    const data = {name:naam, phone, item:id[pos], image};
+    e.preventDefault();
     setLoad(true);
+    const data = {name: naam, phone, title:id[pos], transaction_id}
     await axios.post(`${Backend}/order`, data)
     .then(response => {
       if(response.data.success === true){
@@ -60,19 +62,12 @@ const Item = () => {
     setLoad(false);
   }
   const changeHandler = (e) => {
-    switch (e.target.name) {
-      case "name":
-        setNaam(e.target.value);
-        break;
-      case "number":
-        setPhone(e.target.value);
-        break;
-      case "image":
-        setImage(e.target.files[0]);
-      default:
-        break;
-    }
-  }
+    const { name, value } = e.target;
+    if (name === 'name') setNaam(value);
+    if (name === 'number') setPhone(value);
+    if (name === 'transaction_id') setTransaction_id(value);
+  };
+  
   return (
     <div className='order'>
       <div className="left orderChild">
@@ -82,7 +77,7 @@ const Item = () => {
         <div className="details">
         <div className='sum'><div className='one'>Item: </div><div className='two'>{id[pos]}</div></div>
         <div className='sum'><div className='one'>Dimension: </div><div className='two'>{dim}</div></div>
-        <div className='sum'><div className='one'>Price: </div><div className='two'>{price[pos]}</div></div>
+        <div className='sum'><div className='one'>Price: </div><div className='two'>Rs. {price[pos]}/-</div></div>
         <div className='sum'><div className='one'>Company: </div><div className='two'>{company[pos]}</div></div>
         <div className="sum">
         {other[pos].length > 0 && <div className='one'>
@@ -94,7 +89,7 @@ const Item = () => {
       </div>
       
       <div className="right orderChild">
-        <form action="#">
+        <form onSubmit={submitHandler}>
           <div>
           <p>Name: </p>
           <input type="text" name="name" id="name" onChange={changeHandler} value={naam}/>
@@ -104,18 +99,19 @@ const Item = () => {
           <input type="number" name="number" id="number" onChange={changeHandler} value={phone}/>
           </div>
           <div className='file'>
-            <p>Payment screenshot: </p>
-            <input type="file" name="image" id="image" accept="image/*" onChange={changeHandler} />
-          </div>
-          <div className='file'>
             <p>Payment QR Code: </p>
             <div>
               <a href="/pay"><img src="/images/qr.jpg" alt="7307833947" /></a>
-              <p>(After making payment through UPI, your payment screenshot will be first verified and then only your order will be placed.)</p>            
+              <p>(<span className="upiid">UPI id: bhoolgyabhai@oksbi</span> | After making payment through UPI, your transaction id will be first verified and then only your order will be placed.)</p>            
             </div>
           </div>
-          <button type="submit" disabled={load || phone>=10000000000 || phone<1000000000 || phone==null || naam==null || image==null} onClick={submitHandler}>Book</button>
+          <div className='file'>
+            <p>UPI Transaction ID: </p>
+            <input type="number" name="transaction_id" id="transaction_id" onChange={changeHandler} value={transaction_id}/>
+          </div>
+          <button type="submit" disabled={load || phone>=10000000000 || phone<1000000000 || phone==null || naam==null || transaction_id==null}>Book</button>
           {load && <img src="/gifs/loading.gif" alt="Loading..." className='loader'/>}
+          <div className='itemContact'>Have doubts or safety issues? &nbsp;<a href='/contact'>Contact Us</a></div>
         </form>
       </div>
     </div>
