@@ -5,6 +5,7 @@ import Item from "./Components/Item";
 import Success from "./Components/Success";
 import Failure from "./Components/Failure";
 import Navbar from "./Components/Navbar";
+import About from "./Components/About";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/:idInt" element={<Item/>}></Route>
           <Route exact path="/success" element={<Success/>}></Route>
           <Route exact path="/failure" element={<Failure/>}></Route>
+          <Route exact path="/about" element={<About/>}></Route>
         </Routes>
       </Router>
     </div>
