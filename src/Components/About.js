@@ -9,7 +9,7 @@ const About = () => {
       <h2>&#8226; Our mission</h2>
       <p>Our mission is to provide IIT BHU freshers with a one-step solution for all their basic needs, making their transition to college life smooth and hassle-free.</p>
       <h2>&#8226; Why trust us!</h2>
-      <p>We, the developers of DormBuddy, are from the same college as yours. So, in case of any problem you face while buying, you can contact us <a href="/contact" className='spe'>online</a> as well as offline.</p>
+      <p>We, the developers of DormBuddy, are from the same college as yours. So, in case of any problem you face while buying, you can <a href="/contact" className='spe'>contact</a> us online as well as offline.</p>
       <h2>&#8226; What we offer</h2>
       <p>From essential dormitory supplies like mattress and buckets to tech gadgets and bicycles, we cover all the necessities to help you settle in comfortably.</p>
       <h2>&#8226; How it works</h2>
