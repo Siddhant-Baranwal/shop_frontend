@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -101,7 +101,7 @@ const Item = () => {
           <div className='file'>
             <p>Payment QR Code: </p>
             <div>
-              <a href="/pay"><img src="/images/qr.jpg" alt="7307833947" /></a>
+              <Link to="/pay"><img src="/images/qr.jpg" alt="7307833947" /></Link>
               <p>(<span className="upiid">UPI id: bhoolgyabhai@oksbi</span> | After making payment through UPI, your transaction id will be first verified and then only your order will be placed.)</p>            
             </div>
           </div>
@@ -111,7 +111,7 @@ const Item = () => {
           </div>
           <button type="submit" disabled={load || phone>=10000000000 || phone<1000000000 || phone==null || naam==null || transaction_id==null}>Book</button>
           {load && <img src="/gifs/loading.gif" alt="Loading..." className='loader'/>}
-          <div className='itemContact'>Have doubts or safety issues? &nbsp;<a href='/contact'>Contact Us</a></div>
+          <div className='itemContact'>Have doubts or safety issues? &nbsp;<Link to='/contact'>Contact Us</Link></div>
         </form>
       </div>
     </div>
