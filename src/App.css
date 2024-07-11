@@ -208,6 +208,7 @@ form button:enabled:hover{
 
 .left{
   font-size: 1.5vw;
+  border-right: 3px solid white;
 }
 
 .sum{
@@ -450,6 +451,9 @@ form button:enabled:hover{
   .left{
     width: 95vw;
     font-size: 4vw;
+    padding-bottom: 2vw;
+    border-bottom: 3px solid white;
+    border-right: none;
   }
 
   .one{
