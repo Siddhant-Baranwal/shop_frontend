@@ -24,7 +24,8 @@ form{
   justify-content: center;
   flex-direction: column;
   width: 80%;
-  height: 80vh;
+  height: auto;
+  padding: 2vw;
   background-color: #1f283389;
   margin: 0vw 0vw 0vw 5vw;
 }
@@ -238,13 +239,6 @@ form button:enabled:hover{
   margin-top: 1.5vw;
 }
 
-.loader{
-  height: 10vw;
-  width: 20vw;
-  position: relative;
-  top: 2vw;
-}
-
 .logo{
   width: 5vw;
   height: 5vw;
@@ -359,7 +353,6 @@ form button:enabled:hover{
 }
 
 .itemContact{
-  margin-top: 10px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -373,12 +366,9 @@ form button:enabled:hover{
 }
 
 .loader{
-  position: absolute;
-  background-color: #217eef40;
-  width: 100vw;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  height: 2vw;
+  width: 8vw;
+  margin: 0.5vw;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -500,7 +490,7 @@ form button:enabled:hover{
   form button{
     font-size: 5vw;
     padding: 0.5vw 3vw;
-    margin: 3vw 0vw 3vw 0vw;
+    margin: 3vw 0vw 0vw 0vw;
     font-weight: bold;
     transition: 1s;
   }
@@ -563,6 +553,15 @@ form button:enabled:hover{
     color: #66fcf1;
     border-bottom: 2px solid #66fcf1;
     padding: 5px;
+  }
+  
+  .loader{
+    height: 4vw;
+    width: 16vw;
+  }
+
+  .itemContact{
+    margin-top: 0;
   }
 
 }
