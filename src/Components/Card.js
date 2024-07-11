@@ -6,7 +6,7 @@ const Card = ({title, amount}) => {
     <Link to={`/${title.toLowerCase()}`} className='card'>
         <img src={`/images/${title.toLowerCase()}0.jpg`} alt=''/>
         <div>{title}</div>
-        <Link to={`/${title.toLowerCase()}`}>Buy {amount}/-</Link>
+        <div className='a'>Buy {amount}/-</div>
     </Link>
   )
 }
