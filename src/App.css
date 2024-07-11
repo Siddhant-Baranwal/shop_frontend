@@ -86,6 +86,7 @@ form button:enabled:hover{
 .image img{
   border-radius: 2vw;
   width: 30vw;
+  height: 25vw;
 }
 
 .navbar{
@@ -457,6 +458,7 @@ form button:enabled:hover{
 
   .left .image img{
     width: 90vw;
+    height: 75vw;
   }
 
   .right{
