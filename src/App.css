@@ -371,7 +371,53 @@ form button:enabled:hover{
   margin: 0.5vw;
 }
 
-@media only screen and (max-width: 1000px) {
+.brandLogo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: #1f283388;
+}
+
+.brandLogo img{
+  width: 30vw;
+  height: 12vw;
+}
+
+.brandLogo p{
+  font-size: 1.75vw;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 3vw;
+  padding-left: 1vw;
+  color: #66fcf1;
+}
+
+.brandLink{
+  display: block;
+  color: #66fcf1;
+  font-family:monospace ;
+  font-size: 1.75vw;
+  margin-top: 2vw;
+  padding: 1vw;
+  background-color: #1f2833a1;
+  text-align: center;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+.brandLink:hover{
+  text-decoration: none;
+  color: black;
+  background-color: #66fcf2c4;
+}
+  
+.end{
+  margin-bottom: 5vw;
+}
+
+@media only screen and (max-width: 800px) {
   .about{
     background-color: #1f283398;
     width: 95vw;
@@ -425,7 +471,6 @@ form button:enabled:hover{
 
   .navbar a{
     font-size: 3vw;
-    margin: 1vw;
     padding: 2vw 3vw;
   }
 
@@ -564,4 +609,32 @@ form button:enabled:hover{
     margin-top: 0;
   }
 
+  .brandLogo{
+    flex-direction: column;
+  }
+  
+  .brandLogo img{
+    width: 60vw;
+    height: 40vw;
+  }
+  
+  .brandLogo p{
+    font-size: 3.5vw;
+    letter-spacing: 1px;
+    padding: 0 2vw;
+    text-align: justify;
+  }
+  
+  .brandLink{
+    display: block;
+    color: #66fcf1;
+    font-family:monospace ;
+    font-size: 3.5vw;
+    margin-top: 2vw;
+    padding: 1.5vw;
+    background-color: #1f2833a1;
+    text-align: center;
+    text-decoration: underline;
+    transition: 0.5s;
+  }
 }

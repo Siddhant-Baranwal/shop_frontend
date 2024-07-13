@@ -8,6 +8,7 @@ import Navbar from "./Components/Navbar";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Pay from "./Components/Pay";
+import Main from "./Components/Main";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Navbar/>
       <Router>
         <Routes>
-          <Route exact path="/" element={<Home/>}></Route>
+          <Route exact path="/home" element={<Home/>}></Route>
+          <Route exact path="/" element={<Main/>}></Route>
           <Route exact path="/:idInt" element={<Item/>}></Route>
           <Route exact path="/success" element={<Success/>}></Route>
           <Route exact path="/failure" element={<Failure/>}></Route>
