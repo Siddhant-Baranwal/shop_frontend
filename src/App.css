@@ -621,7 +621,7 @@ form button:enabled:hover{
   .brandLogo p{
     font-size: 3.5vw;
     letter-spacing: 1px;
-    padding: 0 2vw;
+    padding: 0 2vw 5vw 2vw;
     text-align: justify;
   }
   

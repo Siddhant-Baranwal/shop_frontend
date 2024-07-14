@@ -6,7 +6,7 @@ const Main = () => {
       <div className='welcome'>Welcome to DormBuddy - The Online Store for freshers 24'</div>
       <div className="brandLogo" >
         <img src="/images/brandLogo.png" alt=""/>
-        <p>DormBuddy is an online store created by students of IIT BHU, for the students of IIT BHU. If you are a fresher in IIT BHU and worrying where to get the basic things for your new college life, DormBuddy is the perfect place for you.</p>
+        <p>DormBuddy is an online store developed by IIT BHU students, exclusively for the IIT BHU community. If you are a fresher at IIT BHU and are concerned about where to find essential items for your new college life, DormBuddy is your ideal solution.</p>
       </div>
       <a href="/home" className="brandLink">Shop now!</a>
       <a href="/home" className="brandLink">Know more about us</a>
