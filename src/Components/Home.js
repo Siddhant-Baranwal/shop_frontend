@@ -9,7 +9,7 @@ const Home = () => {
   ))
   return (
     <div className='home'>
-      <div className='welcome'>Welcome to DormBuddy - The Online Store for freshers 24'</div>
+      <div className='welcome'>Get the best products at the best price delivered to you.</div>
       <div className='components'>{headComponent}</div>
     </div>
   )
