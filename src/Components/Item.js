@@ -7,12 +7,12 @@ const Item = () => {
   const navigate = useNavigate();
   let [load, setLoad] = useState(false);
   let [it, setIt] = useState(0);
-  const id = ['Matress-A', 'Matress-B'];
+  const id = ['Matress-A', 'Matress-B', 'Matress-C'];
   const Backend = "https://shop-backend-j284.onrender.com"
   // const Backend = "http://localhost:4000"
   const {idInt} = useParams();
   const pos = id.findIndex(ele => ele.toLowerCase()===idInt);
-  const price = [3500, 2500];
+  const price = [3499, 2799, 2299];
   let [naam, setNaam] = useState();
   let [phone, setPhone] = useState();
   let [date, setDate] = useState();
@@ -25,9 +25,9 @@ const Item = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  const company = ['Bombay Dieing', 'Donlup'];
-  const size = [['6inch', '3ft', '5inch'], ['6inch', '3ft', '4inch']]
-  const other = [['Made from Foam and Softy'], ['Made from Foam and Softy']];
+  const company = ['Bombay Dieing', 'Donlup', 'NeelKamal'];
+  const size = [['6inch', '3ft', '5inch'], ['6inch', '3ft', '4inch'], ['6inch', '3ft', '4inch']];
+  const other = [['Made from Foam and Softy'], ['Made from Foam and Softy'], ['Made from Foam and Softy', 'Limited stock']];
   const details = other[pos].map((item, index) => {
     return (
       <div className='special'>&#8226; {other[pos][index]}</div>
@@ -75,7 +75,7 @@ const Item = () => {
     <div className='order'>
       <div className="left orderChild">
         <div className='image'>
-          <img src={`/images/${idInt}${it%2}.png`} alt={`/images/${idInt}${it%2}.png`} />
+          <img src={`/images/${idInt}${it%2}.jpg`} alt={`/images/${idInt}${it%2}.jpg`} />
         </div>
         <div className="details">
         <div className='sum'><div className='one'>Item: </div><div className='two'>{id[pos]}</div></div>

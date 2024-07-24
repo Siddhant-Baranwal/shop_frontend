@@ -2,8 +2,8 @@ import React from 'react';
 import Card from './Card';
 
 const Home = () => {
-  const name = ['Matress-A', 'Matress-B'];
-  const price = [3500, 2500];
+  const name = ['Matress-A', 'Matress-B', 'Matress-C'];
+  const price = [3499, 2799, 2299];
   const headComponent = name.map((item, index) => (
     <Card key={index} title={name[index]} amount={price[index]} />
   ))
