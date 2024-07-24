@@ -7,14 +7,15 @@ const Item = () => {
   const navigate = useNavigate();
   let [load, setLoad] = useState(false);
   let [it, setIt] = useState(0);
+  const id = ['Matress-A', 'Matress-B'];
   const Backend = "https://shop-backend-j284.onrender.com"
   // const Backend = "http://localhost:4000"
   const {idInt} = useParams();
-  const id = ["Cycle", "Matress", "Laptop", "Bucket"];
   const pos = id.findIndex(ele => ele.toLowerCase()===idInt);
-  const price = [6500, 2500, 53000, 500];
+  const price = [3500, 2500];
   let [naam, setNaam] = useState();
   let [phone, setPhone] = useState();
+  let [date, setDate] = useState();
   let [transaction_id, setTransaction_id] = useState();
   useEffect(() => {
     let i = 0;
@@ -24,9 +25,9 @@ const Item = () => {
     }, 3000);
     return () => clearInterval(interval);
   }, []);
-  const company = ['Ranger', 'Signature', 'HP', 'Shyam'];
-  const size = [['5ft'], ['5inch', '7ft', '5ft'], ['15inch', '10inch', '1inch'], ['2ft Diameter']]
-  const other = [['With Gear', 'Wide Tires'], [], ['8GB RAM', 'Graphics Card', '512GB SSD Card'], []];
+  const company = ['Bombay Dieing', 'Donlup'];
+  const size = [['6inch', '3ft', '5inch'], ['6inch', '3ft', '4inch']]
+  const other = [['Foam made'], ['Foam made']];
   const details = other[pos].map((item, index) => {
     return (
       <div className='special'>&#8226; {other[pos][index]}</div>
@@ -45,7 +46,8 @@ const Item = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     setLoad(true);
-    const data = {name: naam, phone, title:id[pos], transaction_id}
+    const data = {name: naam, phone, title:id[pos], arrival:date, transaction_id};
+    console.log(data);
     await axios.post(`${Backend}/order`, data)
     .then(response => {
       if(response.data.success === true){
@@ -65,6 +67,7 @@ const Item = () => {
     const { name, value } = e.target;
     if (name === 'name') setNaam(value);
     if (name === 'number') setPhone(value);
+    if (name === 'date') setDate(value);
     if (name === 'transaction_id') setTransaction_id(value);
   };
   
@@ -97,6 +100,10 @@ const Item = () => {
           <div>
           <p>Phone number: </p>
           <input type="number" name="number" id="number" onChange={changeHandler} value={phone}/>
+          </div>
+          <div>
+          <p>Date of arrival: </p>
+          <input type="date" name="date" id="date" onChange={changeHandler} value={date}/>
           </div>
           <div className='file'>
             <p>Payment QR Code: </p>
