@@ -27,7 +27,7 @@ const Item = () => {
   }, []);
   const company = ['Bombay Dieing', 'Donlup'];
   const size = [['6inch', '3ft', '5inch'], ['6inch', '3ft', '4inch']]
-  const other = [['Foam made'], ['Foam made']];
+  const other = [['Made from Foam and Softy'], ['Made from Foam and Softy']];
   const details = other[pos].map((item, index) => {
     return (
       <div className='special'>&#8226; {other[pos][index]}</div>
@@ -75,7 +75,7 @@ const Item = () => {
     <div className='order'>
       <div className="left orderChild">
         <div className='image'>
-          <img src={`/images/${idInt}${it%3}.jpg`} alt={`/images/${idInt}${it%3}.jpg`} />
+          <img src={`/images/${idInt}${it%2}.png`} alt={`/images/${idInt}${it%2}.png`} />
         </div>
         <div className="details">
         <div className='sum'><div className='one'>Item: </div><div className='two'>{id[pos]}</div></div>
