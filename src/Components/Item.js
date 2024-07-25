@@ -109,7 +109,7 @@ const Item = () => {
             <p>Payment QR Code: </p>
             <div>
               <Link to="/pay"><img src="/images/qr.jpg" alt="7307833947" /></Link>
-              <p>(<span className="upiid">UPI id: bhoolgyabhai@oksbi</span> | After making payment through UPI, your transaction id will be first verified and then only your order will be placed.)</p>            
+              <p>(<span className="upiid">UPI id: ##########</span> | After making payment through UPI, your transaction id will be first verified and then only your order will be placed.)</p>            
             </div>
           </div>
           <div className='file'>

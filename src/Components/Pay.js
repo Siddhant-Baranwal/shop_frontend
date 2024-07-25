@@ -4,7 +4,7 @@ const Pay = () => {
   return (
     <div className='pay'>
       <img src="/images/qr.jpg" alt="7307833947" />
-      <p>UPI id: bhoolgyabhai@oksbi</p>
+      <p>UPI id: ##########</p>
     </div>
   )
 }
